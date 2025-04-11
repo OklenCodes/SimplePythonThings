@@ -4,7 +4,8 @@ Private repo
 
 Simple python projects as a reminder and things to play with as a i improve python skills. 
 
-SimpleBanking - 
+# SimpleBanking 
+[Simple Banking Application](https://github.com/OklenCodes/SimplePythonThings/tree/main/SimpleBanking)- 
 The project consists of two main Python files:
 * **`oop_project.py`**: This file demonstrates the usage of the bank account classes defined in `bank_accounts.py`. It creates instances of different account types and performs various transactions.
 * **`bank_accounts.py`**: This file defines the classes for different types of bank accounts: `BankAccount`, `InterestRewardsAcct`, and `SavingsAcct`, along with a custom exception `BalanceException`.
