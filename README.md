@@ -23,7 +23,7 @@ Interest Rewards Account: Creates an instance of InterestRewardsAcct for "jim," 
 Savings Account: Creates an instance of SavingsAcct for "blaze," performs a deposit, and attempts a large transfer (which will likely fail due to insufficient funds after the withdrawal fee is applied).
 
 ## Further Development
-This is a basic banking system. Potential future enhancements could include:
+Potential future enhancements could include:
 
 * Implementing transaction history.
 * Adding more account types (e.g., checking account with overdraft).
