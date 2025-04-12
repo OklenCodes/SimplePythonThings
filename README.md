@@ -7,12 +7,8 @@ Simple python projects as a reminder and things to play with as a i improve pyth
 # Basic Banking App 
 [Basic Banking App](https://github.com/OklenCodes/SimplePythonThings/tree/main/SimpleBanking)- 
 
-Project Goal
-Implement security measures throughout the software development lifecycle, creating a Secure Software Development Life Cycle (SSDLC).
-Automate security testing to identify vulnerabilities early in the development process, shifting security left.
-Integrate security into the CI/CD pipeline for continuous security monitoring.
-Ensure compliance with security best practices and industry standards.
-Enable PR blocking for Critical and High Vulnerabilities.
+## Project Goal
+
 
 The project consists of two main Python files:
 * **`oop_project.py`**: This file demonstrates the usage of the bank account classes defined in `bank_accounts.py`. It creates instances of different account types and performs various transactions.
