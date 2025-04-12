@@ -7,6 +7,7 @@ Simple python projects as a reminder and things to play with as a i improve pyth
 # Basic Banking App 
 
 ## Project Goal
+To create a simple banking system in python that becomes more intricate over time using different modules and functions to mimic a real banking system.
 
 [Basic Banking App](https://github.com/OklenCodes/SimplePythonThings/tree/main/SimpleBanking)- 
 The project consists of two main Python files:
