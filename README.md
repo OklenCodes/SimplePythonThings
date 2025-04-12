@@ -5,11 +5,10 @@ Private repo
 Simple python projects as a reminder and things to play with as a i improve python skills. 
 
 # Basic Banking App 
-[Basic Banking App](https://github.com/OklenCodes/SimplePythonThings/tree/main/SimpleBanking)- 
 
 ## Project Goal
 
-
+[Basic Banking App](https://github.com/OklenCodes/SimplePythonThings/tree/main/SimpleBanking)- 
 The project consists of two main Python files:
 * **`oop_project.py`**: This file demonstrates the usage of the bank account classes defined in `bank_accounts.py`. It creates instances of different account types and performs various transactions.
 * **`bank_accounts.py`**: This file defines the classes for different types of bank accounts: `BankAccount`, `InterestRewardsAcct`, and `SavingsAcct`, along with a custom exception `BalanceException`.
@@ -25,8 +24,8 @@ Savings Account: Creates an instance of SavingsAcct for "blaze," performs a depo
 Further Development
 This is a basic banking system. Potential future enhancements could include:
 
-Implementing transaction history.
-Adding more account types (e.g., checking account with overdraft).
-Implementing more robust error handling and input validation.
-Persisting account data to a file or database.
-Adding user authentication and security features.
+* Implementing transaction history.
+* Adding more account types (e.g., checking account with overdraft).
+* Implementing more robust error handling and input validation.
+* Persisting account data to a file or database.
+* Adding user authentication and security features.
