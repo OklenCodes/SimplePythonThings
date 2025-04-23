@@ -21,6 +21,11 @@ Withdrawals: Performs withdrawal transactions from both Dave's and Sarah's accou
 Transfers: Transfers funds between Dave's and Sarah's accounts.
 Interest Rewards Account: Creates an instance of InterestRewardsAcct for "jim," performs a deposit (which includes an interest reward), and transfers funds to Dave's account.
 Savings Account: Creates an instance of SavingsAcct for "blaze," performs a deposit, and attempts a large transfer (which will likely fail due to insufficient funds after the withdrawal fee is applied).
+history List: An empty list self.history is created when a BankAccount object is initialized.
+Recording Transactions:
+In deposit, withdraw, and transfer, a dictionary containing details of the transaction (type, amount, timestamp) is created and appended to the self.history list.
+For transfers, both the sending and receiving accounts record the transaction, noting the other party involved.
+viewHistory() Method: This new method iterates through the self.history list and prints the details of each transaction in a readable format.
 
 ## Further Development
 Potential future enhancements could include:
