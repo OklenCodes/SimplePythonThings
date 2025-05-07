@@ -32,7 +32,6 @@ viewHistory() Method: This new method iterates through the self.history list and
 Potential future enhancements could include:
 
 * ~Implementing transaction history.~
-* Adding more account types (e.g., checking account with overdraft).
 * Implementing more robust error handling and input validation.
 * Persisting account data to a file or database.
 * Adding user authentication and security features.
