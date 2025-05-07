@@ -40,6 +40,6 @@ Returning Error Codes or Status Objects that the calling code can then use to ha
 Potential future enhancements could include:
 
 * ~Implementing transaction history.~
-* ~ Implementing more robust error handling and input validation. ~
+* ~Implementing more robust error handling and input validation.~
 * Persisting account data to a file or database.
 * Adding user authentication and security features.
