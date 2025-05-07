@@ -28,10 +28,18 @@ In deposit, withdraw, and transfer, a dictionary containing details of the trans
 For transfers, both the sending and receiving accounts record the transaction, noting the other party involved.
 viewHistory() Method: This new method iterates through the self.history list and prints the details of each transaction in a readable format.
 
+Implementing robust error handling:
+Including type error and value error if statements to ensure that the values transferred or deposited are positive or above 0. More indepth error handling can include - IOError, ConnectionError if i am connecting to API's or Databases.
+InvalidAccountError for when an invalid account object is passed.
+TransactionFailedError for general transaction failures not due to insufficient balance.
+Returning Error Codes or Status Objects that the calling code can then use to handle errors in a more programmatic way. This makes the could make the code more reusable and testable.
+
+
+
 ## Further Development
 Potential future enhancements could include:
 
 * ~Implementing transaction history.~
-* Implementing more robust error handling and input validation.
+* ~ Implementing more robust error handling and input validation. ~
 * Persisting account data to a file or database.
 * Adding user authentication and security features.
