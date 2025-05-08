@@ -5,7 +5,7 @@ Private repo
 Simple python projects as a reminder and things to play with as a i improve python skills. 
 
 
-## Bank Account Classes
+## Basic Bank Account Preoject 
 
 * **`oop_project.py`**: This Python file defines a set of classes to represent different types of bank accounts and handle basic banking operations.
 * **`bank_accounts.py`**:This Python file provides the output of the bank accounts and their actions/transactions
@@ -29,7 +29,6 @@ Simple python projects as a reminder and things to play with as a i improve pyth
 **Usage:**
 
 This file is intended to be imported and used by other Python scripts to create and manage bank account objects and perform operations like depositing, withdrawing, and transferring funds. The `viewHistory` method allows tracking the transactions for each account. Custom exceptions (`BalanceException`) are used to handle cases of insufficient funds.
-
 
 ## Further Development
 Potential future enhancements could include:
@@ -71,37 +70,3 @@ The `play_game` function manages the arcade menu loop. It greets the user and pr
 The script uses the `argparse` module to accept the player's name via the `-n` or `--name` command-line argument when the script is executed. This name is then used for personalized greetings throughout the arcade experience.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The oop_project.py script demonstrates the following actions:
-Creating Accounts: Creates instances of BankAccount for "Dave" and "Sarah" with initial balances.
-Checking Balances: Calls the getBalance() method to display the initial balances.
-Deposits: Performs deposit transactions into both Dave's and Sarah's accounts.
-Withdrawals: Performs withdrawal transactions from both Dave's and Sarah's accounts.
-Transfers: Transfers funds between Dave's and Sarah's accounts.
-Interest Rewards Account: Creates an instance of InterestRewardsAcct for "jim," performs a deposit (which includes an interest reward), and transfers funds to Dave's account.
-Savings Account: Creates an instance of SavingsAcct for "blaze," performs a deposit, and attempts a large transfer (which will likely fail due to insufficient funds after the withdrawal fee is applied).
-history List: An empty list self.history is created when a BankAccount object is initialized.
-
-Recording Transactions:
-In deposit, withdraw, and transfer, a dictionary containing details of the transaction (type, amount, timestamp) is created and appended to the self.history list.
-For transfers, both the sending and receiving accounts record the transaction, noting the other party involved.
-viewHistory() Method: This new method iterates through the self.history list and prints the details of each transaction in a readable format.
-
-Implementing robust error handling:
-Including type error and value error if statements to ensure that the values transferred or deposited are positive or above 0. More indepth error handling can include - IOError, ConnectionError if i am connecting to API's or Databases.
-InvalidAccountError for when an invalid account object is passed.
-TransactionFailedError for general transaction failures not due to insufficient balance.
-Returning Error Codes or Status Objects that the calling code can then use to handle errors in a more programmatic way. This makes the could make the code more reusable and testable.
