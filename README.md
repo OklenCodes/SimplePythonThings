@@ -52,6 +52,8 @@ To create 2 simple games then an accompanying file arcade file that joins them t
 The project consists of 3 file Python files:
 
 * **`arcade.py`**: This Python script provides a simple arcade menu that allows a user to choose between two games: Rock Paper Scissors and Guess My Number.
+* **`guess_number.py`**: This file demonstrates the usage of the bank account classes defined in `bank_accounts.py`. It creates instances of different account types and performs various transactions.
+* **`rps.py`**: This file defines the classes for different types of bank accounts: `BankAccount`, `InterestRewardsAcct`, and `SavingsAcct`, along with a custom exception `BalanceException`.
 
 **Key Features:**
 
@@ -86,8 +88,7 @@ The script uses the `argparse` module to accept the player's name via the `-n` o
 
 
 
-* **`guess_number.py`**: This file demonstrates the usage of the bank account classes defined in `bank_accounts.py`. It creates instances of different account types and performs various transactions.
-* **`rps.py`**: This file defines the classes for different types of bank accounts: `BankAccount`, `InterestRewardsAcct`, and `SavingsAcct`, along with a custom exception `BalanceException`.
+
 The oop_project.py script demonstrates the following actions:
 Creating Accounts: Creates instances of BankAccount for "Dave" and "Sarah" with initial balances.
 Checking Balances: Calls the getBalance() method to display the initial balances.
