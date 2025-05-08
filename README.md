@@ -68,5 +68,3 @@ The `play_game` function manages the arcade menu loop. It greets the user and pr
 * Prompts the user again for a valid choice if an invalid input is provided.
 
 The script uses the `argparse` module to accept the player's name via the `-n` or `--name` command-line argument when the script is executed. This name is then used for personalized greetings throughout the arcade experience.
-
-
