@@ -51,8 +51,43 @@ To create 2 simple games then an accompanying file arcade file that joins them t
 [Arcade](https://github.com/OklenCodes/SimplePythonThings/tree/main/Arcade)- 
 The project consists of 3 file Python files:
 
-* **`oop_project.py`**: This file demonstrates the usage of the bank account classes defined in `bank_accounts.py`. It creates instances of different account types and performs various transactions.
-* **`bank_accounts.py`**: This file defines the classes for different types of bank accounts: `BankAccount`, `InterestRewardsAcct`, and `SavingsAcct`, along with a custom exception `BalanceException`.
+* **`arcade.py`**: This Python script provides a simple arcade menu that allows a user to choose between two games: Rock Paper Scissors and Guess My Number.
+
+**Key Features:**
+
+* **Game Selection:** Presents a menu allowing the user to select which game they want to play by entering '1' for Rock Paper Scissors or '2' for Guess My Number.
+* **Exit Option:** Users can exit the arcade at any time by entering 'x'.
+* **Input Validation:** Basic input validation ensures the user enters a valid menu option.
+* **Personalized Greeting:** Welcomes the user by name upon starting and returning to the menu.
+* **Command Line Argument:** Accepts the player's name as a command-line argument for a personalized experience.
+
+**How it Works:**
+
+The `play_game` function manages the arcade menu loop. It greets the user and presents the game options. Based on the user's input, it either:
+
+* Imports and runs the Rock Paper Scissors game from the `rps.py` module.
+* Imports and runs the Guess My Number game from the `guess_number.py` module.
+* Exits the program if the user enters 'x'.
+* Prompts the user again for a valid choice if an invalid input is provided.
+
+The script uses the `argparse` module to accept the player's name via the `-n` or `--name` command-line argument when the script is executed. This name is then used for personalized greetings throughout the arcade experience.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* **`guess_number.py`**: This file demonstrates the usage of the bank account classes defined in `bank_accounts.py`. It creates instances of different account types and performs various transactions.
+* **`rps.py`**: This file defines the classes for different types of bank accounts: `BankAccount`, `InterestRewardsAcct`, and `SavingsAcct`, along with a custom exception `BalanceException`.
 The oop_project.py script demonstrates the following actions:
 Creating Accounts: Creates instances of BankAccount for "Dave" and "Sarah" with initial balances.
 Checking Balances: Calls the getBalance() method to display the initial balances.
