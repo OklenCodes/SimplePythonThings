@@ -7,8 +7,8 @@ Simple python projects as a reminder and things to play with as a i improve pyth
 
 ## Basic Bank Account Preoject 
 
-* **`oop_project.py`**: This Python file defines a set of classes to represent different types of bank accounts and handle basic banking operations.
-* **`bank_accounts.py`**:This Python file provides the output of the bank accounts and their actions/transactions
+* **`oop_project.py`**: This Python file provides the output of the bank accounts and their actions/transactions 
+* **`bank_accounts.py`**: This Python file defines a set of classes to represent different types of bank accounts and handle basic banking operations.
   
 **Key Features:**
 
