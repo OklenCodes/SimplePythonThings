@@ -4,35 +4,31 @@ Private repo
 
 Simple python projects as a reminder and things to play with as a i improve python skills. 
 
-# Basic Banking App 
 
-## Project Goal
-To create a simple banking system in python that becomes more intricate over time using different modules and functions to mimic a real banking system.
+## Bank Account Classes
 
-[Basic Banking App](https://github.com/OklenCodes/SimplePythonThings/tree/main/SimpleBanking)- 
-The project consists of two main Python files:
-* **`oop_project.py`**: This file demonstrates the usage of the bank account classes defined in `bank_accounts.py`. It creates instances of different account types and performs various transactions.
-* **`bank_accounts.py`**: This file defines the classes for different types of bank accounts: `BankAccount`, `InterestRewardsAcct`, and `SavingsAcct`, along with a custom exception `BalanceException`.
-The oop_project.py script demonstrates the following actions:
-Creating Accounts: Creates instances of BankAccount for "Dave" and "Sarah" with initial balances.
-Checking Balances: Calls the getBalance() method to display the initial balances.
-Deposits: Performs deposit transactions into both Dave's and Sarah's accounts.
-Withdrawals: Performs withdrawal transactions from both Dave's and Sarah's accounts.
-Transfers: Transfers funds between Dave's and Sarah's accounts.
-Interest Rewards Account: Creates an instance of InterestRewardsAcct for "jim," performs a deposit (which includes an interest reward), and transfers funds to Dave's account.
-Savings Account: Creates an instance of SavingsAcct for "blaze," performs a deposit, and attempts a large transfer (which will likely fail due to insufficient funds after the withdrawal fee is applied).
-history List: An empty list self.history is created when a BankAccount object is initialized.
+* **`oop_project.py`**: This Python file defines a set of classes to represent different types of bank accounts and handle basic banking operations.
+* **`bank_accounts.py`**:This Python file provides the output of the bank accounts and their actions/transactions
+  
+**Key Features:**
 
-Recording Transactions:
-In deposit, withdraw, and transfer, a dictionary containing details of the transaction (type, amount, timestamp) is created and appended to the self.history list.
-For transfers, both the sending and receiving accounts record the transaction, noting the other party involved.
-viewHistory() Method: This new method iterates through the self.history list and prints the details of each transaction in a readable format.
+* **`BalanceException`**: A custom exception class raised when an account has insufficient funds for a transaction.
+* **`BankAccount`**: A base class for all bank accounts, providing core functionalities:
+    * **Initialization (`__init__`)**: Creates a new account with an initial balance and account name, and initializes a transaction history.
+    * **Get Balance (`getBalance`)**: Displays the current balance of the account.
+    * **Deposit (`deposit`)**: Increases the account balance, records the transaction, and displays the updated balance. Includes basic input validation for the deposit amount (must be a number and positive).
+    * **Viable Transaction (`viableTransaction`)**: A helper method to check if the account has sufficient funds for a given transaction, raising `BalanceException` if not.
+    * **Withdraw (`withdraw`)**: Decreases the account balance if sufficient funds are available (using `viableTransaction`), records the transaction, and displays the updated balance. Catches `BalanceException` if insufficient funds.
+    * **Transfer (`transfer`)**: Transfers funds from the current account to another `BankAccount` instance. Checks for sufficient funds, performs the withdrawal and deposit on the respective accounts, and records the transaction in both accounts' histories. Catches `BalanceException` if insufficient funds.
+    * **View History (`viewHistory`)**: Displays the transaction history for the account, including the type, amount, timestamp, and involved accounts for transfers.
+* **`InterestRewardsAcct(BankAccount)`**: A subclass of `BankAccount` that provides a reward on deposits (5% interest added to the deposited amount). Overrides the `deposit` method to implement this.
+* **`SavingsAcct(InterestRewardsAcct)`**: A subclass of `InterestRewardsAcct` that introduces a withdrawal fee.
+    * **Initialization (`__init__`)**: Calls the parent's initialization and sets a `fee` of 5.
+    * **Withdraw (`withdraw`)**: Overrides the `withdraw` method to deduct the withdrawal amount plus the `fee`. It checks if sufficient funds are available to cover both the withdrawal and the fee. Catches `BalanceException` if insufficient funds.
 
-Implementing robust error handling:
-Including type error and value error if statements to ensure that the values transferred or deposited are positive or above 0. More indepth error handling can include - IOError, ConnectionError if i am connecting to API's or Databases.
-InvalidAccountError for when an invalid account object is passed.
-TransactionFailedError for general transaction failures not due to insufficient balance.
-Returning Error Codes or Status Objects that the calling code can then use to handle errors in a more programmatic way. This makes the could make the code more reusable and testable.
+**Usage:**
+
+This file is intended to be imported and used by other Python scripts to create and manage bank account objects and perform operations like depositing, withdrawing, and transferring funds. The `viewHistory` method allows tracking the transactions for each account. Custom exceptions (`BalanceException`) are used to handle cases of insufficient funds.
 
 
 ## Further Development
