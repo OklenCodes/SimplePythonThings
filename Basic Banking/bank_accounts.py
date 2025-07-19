@@ -1,3 +1,5 @@
+#This file is going to hold the classes of several types of bank accounts
+
 import datetime
 
 class BalanceException(Exception):
@@ -83,7 +85,7 @@ class BankAccount:
             return
         for transaction in self.history:
             print(f"Type: {transaction['type']}")
-            print(f"Amount: £{transaction['amount']:2.f}")
+            print(f"Amount: £{float(transaction['amount']):.2f}")
             print(f"Timestamp: {transaction['timestamp']}")
             if 'recipient' in transaction:
                 print(f"Recipient: {transaction['recipient']}")
