@@ -1,4 +1,4 @@
-#This file is going to hold the classes of several types of bank accounts
+#This file is going to hold the classes of several types of Bank accounts
 
 import datetime
 
@@ -9,8 +9,8 @@ class BankAccount:
     def __init__(self, initialAmount, acctName):
         self.balance = initialAmount
         self.name = acctName
-        self.history = []  # Initialize an empty list for transaction history
-        print(f"\nAccount '{self.name}' created.\nBalance = £{self.balance:.2f}")
+        self.history = [] #Initialize an empty list for transaction history
+        print(f"\nAccount '{self.name}' created. \nBalance = £{self.balance:.2f}")
 
     def getBalance(self):
         print(f"\nAccount '{self.name}' balance = £{self.balance:.2f}")
@@ -18,70 +18,66 @@ class BankAccount:
     def deposit(self, amount):
         if not isinstance(amount, (int, float)):
             raise TypeError("Deposit amount must be a number.")
-        if amount <= 0:
+        if amount <=0:
             raise ValueError("Deposit must be a positive amount.")
         self.balance = self.balance + amount
         self.history.append({
             "type": "deposit",
-            "amount": amount,
+            "amount": amount, 
             "timestamp": datetime.datetime.now()
         })
-        print("\nDeposit Complete.")
+        print("Deposit Complete.")
         self.getBalance()
 
-    def viableTransaction(self, amount):
+    def viableTransaction(self,amount):
         if self.balance >= amount:
             return
         else:
             raise BalanceException(
-            f"\nSorry, account '{self.name}' has insufficient balance to perform this transaction")
-      
-    def withdraw(self, amount):
+                f"Sorry account '{self.name}' has insufficient balance to perform this transaction.")
+        
+    def withdraw(self,amount):
         try:
             self.viableTransaction(amount)
             self.balance = self.balance - amount
             self.history.append({
-                "type":"withdraw",
-                "amount": amount,
-                "timestamp":datetime.datetime.now()
+                "type": "withdraw",
+                "amount": amount, 
+                "timestamp": datetime.datetime.now()
             })
-            print ("Withdraw Complete")
+            print("Withdraw Complete")
             self.getBalance()
         except BalanceException as error:
-            print(f"\nWithdraw interrupted: {error} ")
-
+            print(f"\nWithdraw Interrupted: {error} ")
 
     def transfer(self, amount, account):
         try:
-            print("\n********\n\nTranferring funds********")
+            print("\n***********\n\nTranferring funds***********")
             self.viableTransaction(amount)
             self.withdraw(amount)
             account.deposit(amount)
             self.history.append({
-                "type":"transfer_out",
+                "type": "transfer_out",
                 "recepient": account.name,
                 "amount": amount,
-                "timestamp":datetime.datetime.now()
+                "timestamp": datetime.datetime.now()
             })
             account.history.append({
                 "type": "transfer_in",
-                "amount": amount,
                 "recepient": self.name,
+                "amount": amount,
                 "timestamp": datetime.datetime.now()
             })
-            print('\nTranfer complete!')
-            print('\n\n********')
+        except BalanceException as error:
+            print(f"\nTransfer interrupted! {error}")
 
         except BalanceException as error:
-            print(f"\nTransfer interrupted!{error}")
-
-        except BalanceException as error:
-            print(f"\nTransfer history is current unavailable please try again later!{error}")
+            print(f"\nTransfer history is currently unavailable, please try again later!{error}")
 
     def viewHistory(self):
-        print(f"\n--- Transaction History for Account '{self.name}' ---")
+        print(f"\n--- Tranaction Hsitory for Account '{self.name}' ---")
         if not self.history:
-            print("No Transaction recorded yet.")
+            print("No Transactions record yet.")
             return
         for transaction in self.history:
             print(f"Type: {transaction['type']}")
@@ -91,27 +87,26 @@ class BankAccount:
                 print(f"Recipient: {transaction['recipient']}")
             if 'sender' in transaction:
                 print(f"Sender: {transaction['sender']}")
-            print("-" * 20)
+            print("---" * 20)
+
 
 class InterestRewardsAcct(BankAccount):
     def deposit(self, amount):
-        self.balance = self.balance + (amount * 1.05) 
-        print("\nDeposit complete")
+        self.balance = self.balance + (amount * 2.50) #Integer is the interest rate
+        print("\nDeposit Completed")
         self.getBalance()
 
 class SavingsAcct(InterestRewardsAcct):
-    def __init__(self, initialamount, acctname):
-        super().__init__(initialamount, acctname)  
+    def __init__(self, initialAmount, acctName):
+        super().__init__(initialAmount, acctName)
         self.fee = 5
 
     def withdraw(self, amount):
-        try: 
+        try:
             self.viableTransaction(amount + self.fee)
-            self.balance = self.balance - (amount  + self.fee)
-            print("\nWithdraw Complete")
+            self.balance = self.balance - (amount + self.fee)
+            print("Withdraw Completed")
 
         except BalanceException as error:
-            print(f"\nWithdraw Interrupted:{error}")
-
-        
+            print(f"\nWithdraw Interrupted: {error}")
 
